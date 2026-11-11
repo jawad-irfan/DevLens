@@ -18,6 +18,10 @@ Its goal is to help developers understand:
 - What could be the possible cause?
 - How can the issue be resolved?
 
+## Dashboard Preview
+
+![DevLens Dashboard](public/devlens-dashboard.png)
+
 ## Key Features
 
 The planned platform features include:
