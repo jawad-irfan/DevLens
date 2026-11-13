@@ -3,9 +3,10 @@
 html {
   background-color: #080d1a;
 }
+
 body {
-  margin:0;
-  min-width:320px;
-  min-height:100vh;
-  font-family:arial, helvetica, sans-serif;
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
 }
