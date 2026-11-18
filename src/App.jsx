@@ -493,7 +493,7 @@ export default function App() {
     <div className="dashboard-shell">
       <Sidebar active={active} setActive={setActive} />
       <main>
-        <Topbar active={active} />``
+        <Topbar active={active} />
         <div className="dashboard-body">
           <div className="main-column">
             <div className="metric-grid">
