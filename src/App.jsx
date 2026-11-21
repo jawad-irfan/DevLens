@@ -1,112 +1,54 @@
 import { useEffect, useState } from "react";
+import {
+  LayoutDashboard,
+  Monitor,
+  ChartNoAxesCombined,
+  TriangleAlert,
+  Clock3,
+  FileText,
+  Sparkles,
+  Settings,
+  CalendarDays,
+  Bell,
+  CircleCheck,
+  Plus,
+  CirclePlay,
+  Eye,
+} from "lucide-react";
 
 const Icon = ({ name, size = 20 }) => {
-  const paths = {
-    grid: (
-      <>
-        <rect x="3" y="3" width="7" height="7" rx="2" />
-        <rect x="14" y="3" width="7" height="7" rx="2" />
-        <rect x="3" y="14" width="7" height="7" rx="2" />
-        <rect x="14" y="14" width="7" height="7" rx="2" />
-      </>
-    ),
-    apps: (
-      <>
-        <rect x="3" y="4" width="18" height="13" rx="2" />
-        <path d="M8 21h8M12 17v4" />
-      </>
-    ),
-    events: (
-      <>
-        <path d="M3 3v18h18" />
-        <path d="m7 16 4-5 3 3 5-7" />
-      </>
-    ),
-    warning: (
-      <>
-        <path d="M10.3 4 2.7 17.3A2 2 0 0 0 4.4 20h15.2a2 2 0 0 0 1.7-2.7L13.7 4a2 2 0 0 0-3.4 0Z" />
-        <path d="M12 9v4M12 17h.01" />
-      </>
-    ),
-    clock: (
-      <>
-        <circle cx="12" cy="12" r="9" />
-        <path d="M12 7v5l3 2" />
-      </>
-    ),
-    logs: (
-      <>
-        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z" />
-        <path d="M14 2v6h6M8 13h8M8 17h6" />
-      </>
-    ),
-    spark: (
-      <>
-        <path d="m12 3 1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3Z" />
-        <path d="m18 16 .8 2.2L21 19l-2.2.8L18 22l-.8-2.2L15 19l2.2-.8L18 16Z" />
-      </>
-    ),
-    settings: (
-      <>
-        <circle cx="12" cy="12" r="3" />
-        <path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1-1.8 1.8-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.6v.2H12.2V20a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1L7.4 17l.1-.1a1.7 1.7 0 0 0 .3-1.9A1.7 1.7 0 0 0 6.2 14H6v-2h.2a1.7 1.7 0 0 0 1.6-1A1.7 1.7 0 0 0 7.5 9l-.1-.1L9.2 7l.1.1a1.7 1.7 0 0 0 1.9.3A1.7 1.7 0 0 0 12.2 6v-.2h2.8V6a1.7 1.7 0 0 0 1 1.4A1.7 1.7 0 0 0 17.9 7l.1-.1L19.8 9l-.1.1a1.7 1.7 0 0 0-.3 1.9 1.7 1.7 0 0 0 1.6 1h.2v2H21a1.7 1.7 0 0 0-1.6 1Z" />
-      </>
-    ),
-    calendar: (
-      <>
-        <rect x="3" y="5" width="18" height="16" rx="2" />
-        <path d="M16 3v4M8 3v4M3 10h18" />
-      </>
-    ),
-    bell: (
-      <>
-        <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9ZM10 21h4" />
-      </>
-    ),
-    check: (
-      <>
-        <circle cx="12" cy="12" r="9" />
-        <path d="m8 12 2.5 2.5L16 9" />
-      </>
-    ),
-    plus: (
-      <>
-        <path d="M12 5v14M5 12h14" />
-      </>
-    ),
-    play: (
-      <>
-        <circle cx="12" cy="12" r="9" />
-        <path d="m10 8 6 4-6 4Z" />
-      </>
-    ),
+  const icons = {
+    grid: LayoutDashboard,
+    apps: Monitor,
+    events: ChartNoAxesCombined,
+    warning: TriangleAlert,
+    clock: Clock3,
+    logs: FileText,
+    spark: Sparkles,
+    settings: Settings,
+    calendar: CalendarDays,
+    bell: Bell,
+    check: CircleCheck,
+    plus: Plus,
+    play: CirclePlay,
   };
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.8"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+
+  const LucideIcon = icons[name];
+
+  return LucideIcon ? (
+    <LucideIcon
+      size={size}
+      strokeWidth={1.8}
       aria-hidden="true"
-    >
-      {paths[name]}
-    </svg>
-  );
+    />
+  ) : null;
 };
 
 function Logo() {
   return (
     <div className="brand">
       <div className="brand-mark">
-        <svg viewBox="0 0 42 32" fill="none">
-          <path d="M2 16C7 8 13 5 21 5s14 3 19 11c-5 8-11 11-19 11S7 24 2 16Z" />
-          <circle cx="21" cy="16" r="5" />
-          <path d="M21 11V5M21 21v6M16 16h-5M26 16h5" />
-        </svg>
+        <Eye />
       </div>
       <div>
         <strong>DevLens</strong>
@@ -179,7 +121,7 @@ function Sidebar({ active, setActive }) {
   const items = [
     ["grid", "Dashboard"],
     ["apps", "Applications"],
-    ["events", "Events"],
+    ["events", "Errors"],
     ["warning", "Errors"],
     ["clock", "Performance"],
     ["logs", "Logs"],
