@@ -118,16 +118,15 @@ function MetricCard({ label, value, change, tone, icon }) {
 }
 
 function Sidebar({ active, setActive }) {
-  const items = [
-    ["grid", "Dashboard"],
-    ["apps", "Applications"],
-    ["events", "Errors"],
-    ["warning", "Errors"],
-    ["clock", "Performance"],
-    ["logs", "Logs"],
-    ["spark", "AI Insights"],
-    ["settings", "Settings"],
-  ];
+const items = [
+  ["grid", "Dashboard"],
+  ["apps", "Applications"],
+  ["events", "Performance"],
+  ["warning", "Errors"],
+  ["logs", "Logs"],
+  ["spark", "AI Insights"],
+  ["settings", "Settings"],
+];
   return (
     <aside className="sidebar">
       <Logo />
